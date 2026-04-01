@@ -54,7 +54,7 @@ class LocalImportFixer(ast.NodeTransformer):
 		return node
 
 class Settings:
-	version = open("VERSION").read()
+	version = open("VERSION").read().strip()
 
 class Build:
 	def __init__(self):
@@ -233,3 +233,5 @@ class Build:
 # Run
 if __name__ == '__main__':
 	Build()
+
+

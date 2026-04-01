@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 import os
 import subprocess
 
+HERE = os.path.dirname(os.path.abspath(__file__))
 
 def safe_git_config(cmd, default=""):
     try:
@@ -9,21 +10,17 @@ def safe_git_config(cmd, default=""):
     except Exception:
         return default
 
-
 def get_project_name():
     repo_url = safe_git_config(["git", "config", "--get", "remote.origin.url"])
     if repo_url:
         return repo_url.split("/")[-1].replace(".git", "")
     return os.path.basename(os.getcwd())
 
-
 def get_author():
     return "issam.mhadhbi.dev"
 
-
 def get_author_email():
     return "issam.mhadhbi.dev@gmail.com"
-
 
 def get_url():
     return (
@@ -31,36 +28,31 @@ def get_url():
         or safe_git_config(["git", "remote", "get-url", "origin"], "")
     )
 
-
 def get_description():
     return os.environ.get("CI_PROJECT_DESCRIPTION", "Python Package made by Mhadhbi Issam.")
 
-
 def get_requirements():
-    req_file = os.path.join(os.getcwd(), "requirements.txt")
+    req_file = os.path.join(HERE, "requirements.txt")
     if not os.path.exists(req_file):
         return []
     with open(req_file, "r") as f:
         return [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
-
 def read_readme():
-    if os.path.exists("README.md"):
-        with open("README.md", encoding="utf-8") as f:
+    readme = os.path.join(HERE, "README.md")
+    if os.path.exists(readme):
+        with open(readme, encoding="utf-8") as f:
             return f.read()
     return ""
 
-
-# ---- metadata (evaluated safely) ----
-NAME = get_project_name()
-VERSION = open("VERSION").read()
-AUTHOR = get_author()
+NAME         = get_project_name()
+VERSION      = open(os.path.join(HERE, "VERSION")).read().strip()  # .strip() fixes newline
+AUTHOR       = get_author()
 AUTHOR_EMAIL = get_author_email()
-URL = get_url()
-DESCRIPTION = get_description()
+URL          = get_url()
+DESCRIPTION  = get_description()
 REQUIREMENTS = get_requirements()
-LONG_DESCRIPTION = read_readme()
-
+LONG_DESC    = read_readme()
 
 setup(
     name=NAME,
@@ -69,7 +61,8 @@ setup(
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     description=DESCRIPTION,
-    long_description=LONG_DESCRIPTION,
+    long_description=LONG_DESC,
+    package_data={"": ["VERSION"]},
     long_description_content_type="text/markdown",
     url=URL,
     project_urls={
