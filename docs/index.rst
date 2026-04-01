@@ -6,4 +6,4 @@ Welcome to pydefoldsdk's documentation!
    :caption: Contents:
    :glob:
 
-   *.md
+   **/*.md
