@@ -53,7 +53,7 @@ def read_readme():
 
 # ---- metadata (evaluated safely) ----
 NAME = get_project_name()
-VERSION = os.environ.get("DEFOLD_SDK_VERSION", "1.11.1")
+VERSION = open("VERSION").read()
 AUTHOR = get_author()
 AUTHOR_EMAIL = get_author_email()
 URL = get_url()

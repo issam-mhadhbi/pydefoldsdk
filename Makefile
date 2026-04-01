@@ -1,6 +1,11 @@
 .PHONY: build-package update-package deploy-test deploy-release clean
 export DEFOLD_SDK_VERSION := 1.11.1
 
+build-version:
+	echo $(DEFOLD_SDK_VERSION) > VERSION
+
+
+
 # Build package in virtual environment
 build-package:
 	@echo "Building package in virtual environment..."

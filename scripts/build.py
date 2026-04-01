@@ -54,7 +54,7 @@ class LocalImportFixer(ast.NodeTransformer):
 		return node
 
 class Settings:
-	version = os.environ.get("DEFOLD_SDK_VERSION","1.11.1")
+	version = open("VERSION").read()
 
 class Build:
 	def __init__(self):
