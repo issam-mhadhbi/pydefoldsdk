@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.abspath('..'))  # include root package
 
 project = 'pydefoldsdk'
 author = 'Mhadhbi Issam'
-release = open("VERSION").read()
+release = open("./../VERSION").read()
 
 extensions = [
     'sphinx.ext.autodoc',   # generate docs from docstrings
