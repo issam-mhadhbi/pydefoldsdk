@@ -40,7 +40,7 @@ class PypiPublisher:
         setup(
             name=os.path.basename(os.getcwd()),
             version=os.environ.get("DEFOLD_SDK_VERSION"),
-            packages=find_packages(exclude=["docs", "docs.*"]),
+            packages=find_packages(exclude=["docs", "docs.*",".readthedocs.yaml"]),
             author=author,
             author_email=author_email,
             description=description,
