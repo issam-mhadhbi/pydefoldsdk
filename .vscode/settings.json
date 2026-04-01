@@ -4,5 +4,5 @@
     "git.confirmSync": false,
     "workbench.layoutControl.enabled": true,
     "window.commandCenter": false,
-    "python.defaultInterpreterPath": "./.venv/bin/python"
+    "python.defaultInterpreterPath": ".venv/bin/python"
 }

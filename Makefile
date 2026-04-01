@@ -1,7 +1,7 @@
-.PHONY: build-package update-package
+.PHONY: build-package update-package deploy-test deploy-release clean
 export DEFOLD_SDK_VERSION := 1.11.1
 
-
+# Build package in virtual environment
 build-package:
 	@echo "Building package in virtual environment..."
 	@bash -c '\
@@ -10,6 +10,7 @@ build-package:
 	python scripts/build.py \
 	'
 
+# Update package and generate docs
 update-package:
 	@echo "Updating package..."
 	@bash -c '\
@@ -21,13 +22,30 @@ update-package:
 	python scripts/gendoc.py \
 	'
 
-deploy-package : 
-	pip install twine requests setuptools
-	rm -rf dist *.egg-info || true
-	python setup.py sdist  bdist_wheel 
+# Deploy to TestPyPI
+deploy-test: clean build-package
+	@echo "Deploying package to TestPyPI..."
+	@bash -c '\
+	pip install --upgrade build twine && \
+	python -m build && \
+	twine check dist/* && \
+	twine upload --repository testpypi dist/* \
+	'
 
-clean : 
-	rm -rf .venv
+# Deploy to PyPI (release)
+deploy-release: clean build-package
+	@echo "Deploying package to PyPI..."
+	@bash -c '\
+	pip install --upgrade build twine && \
+	python -m build && \
+	twine check dist/* && \
+	twine upload dist/* \
+	'
+
+# Clean all build artifacts
+clean:
+	@echo "Cleaning..."
 	rm -rf pydefoldsdk.egg-info
 	rm -rf build
+	rm -rf dist
 	rm -rf .build
