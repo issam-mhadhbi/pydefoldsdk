@@ -21,8 +21,7 @@ update-package:
 	@bash -c '\
 	if [ -d "pydefoldsdk" ]; then rm -rf pydefoldsdk; fi && \
 	cp -r .build/pydefold-*/pydefoldsdk . && \
-	if [ -d "docs" ]; then rm -rf docs; fi && \
-	mkdir docs && \
+	if [ -d "docs" ]; then rm -rf docs/*.md ; fi && \
 	source .venv/bin/activate && \
 	python scripts/gendoc.py \
 	'
