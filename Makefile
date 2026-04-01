@@ -1,5 +1,5 @@
 .PHONY: build-package update-package
-export DEFOLD_SDK_VERSION := "1.11.1"
+export DEFOLD_SDK_VERSION := 1.11.1
 
 
 build-package:
@@ -20,3 +20,8 @@ update-package:
 	source .venv/bin/activate && \
 	python scripts/gendoc.py \
 	'
+
+deploy-package : 
+	pip install twine requests setuptools
+	rm -rf dist *.egg-info || true
+	python setup.py sdist  bdist_wheel 
