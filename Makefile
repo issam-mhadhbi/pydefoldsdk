@@ -25,3 +25,9 @@ deploy-package :
 	pip install twine requests setuptools
 	rm -rf dist *.egg-info || true
 	python setup.py sdist  bdist_wheel 
+
+clean : 
+	rm -rf .venv
+	rm -rf pydefoldsdk.egg-info
+	rm -rf build
+	rm -rf .build
