@@ -1,0 +1,99 @@
+# Message: `NodeDesc`
+
+### Fields:
+- **position**: `Vector4`
+- **rotation**: `Vector4`
+- **scale**: `Vector4One`
+- **size**: `Vector4`
+- **color**: `Vector4One`
+- **type**: `int`
+- **blend_mode**: `int`
+- **text**: `str`
+- **texture**: `str`
+- **font**: `str`
+- **id**: `str`
+- **xanchor**: `int`
+- **yanchor**: `int`
+- **pivot**: `int`
+- **outline**: `Vector4WOne`
+- **shadow**: `Vector4WOne`
+- **adjust_mode**: `int`
+- **line_break**: `bool`
+- **parent**: `str`
+- **layer**: `str`
+- **inherit_alpha**: `bool`
+- **slice9**: `Vector4`
+- **outerBounds**: `int`
+- **innerRadius**: `float`
+- **perimeterVertices**: `int`
+- **pieFillAngle**: `float`
+- **clipping_mode**: `int`
+- **clipping_visible**: `bool`
+- **clipping_inverted**: `bool`
+- **alpha**: `float`
+- **outline_alpha**: `float`
+- **shadow_alpha**: `float`
+- **overridden_fields**: `int`
+- **template**: `str`
+- **template_node_child**: `bool`
+- **text_leading**: `float`
+- **text_tracking**: `float`
+- **size_mode**: `int`
+- **spine_scene**: `str`
+- **spine_default_animation**: `str`
+- **spine_skin**: `str`
+- **spine_node_child**: `bool`
+- **particlefx**: `str`
+- **custom_type**: `int`
+- **enabled**: `bool`
+- **visible**: `bool`
+- **material**: `str`
+
+### Enums:
+- **Type**:
+  - `TYPE_BOX = 0`
+  - `TYPE_TEXT = 1`
+  - `TYPE_PIE = 2`
+  - `TYPE_TEMPLATE = 3`
+  - `TYPE_SPINE = 4`
+  - `TYPE_PARTICLEFX = 5`
+  - `TYPE_CUSTOM = 6`
+- **BlendMode**:
+  - `BLEND_MODE_ALPHA = 0`
+  - `BLEND_MODE_ADD = 1`
+  - `BLEND_MODE_ADD_ALPHA = 2`
+  - `BLEND_MODE_MULT = 3`
+  - `BLEND_MODE_SCREEN = 4`
+- **ClippingMode**:
+  - `CLIPPING_MODE_NONE = 0`
+  - `CLIPPING_MODE_STENCIL = 2`
+- **XAnchor**:
+  - `XANCHOR_NONE = 0`
+  - `XANCHOR_LEFT = 1`
+  - `XANCHOR_RIGHT = 2`
+- **YAnchor**:
+  - `YANCHOR_NONE = 0`
+  - `YANCHOR_TOP = 1`
+  - `YANCHOR_BOTTOM = 2`
+- **Pivot**:
+  - `PIVOT_CENTER = 0`
+  - `PIVOT_N = 1`
+  - `PIVOT_NE = 2`
+  - `PIVOT_E = 3`
+  - `PIVOT_SE = 4`
+  - `PIVOT_S = 5`
+  - `PIVOT_SW = 6`
+  - `PIVOT_W = 7`
+  - `PIVOT_NW = 8`
+- **AdjustMode**:
+  - `ADJUST_MODE_FIT = 0`
+  - `ADJUST_MODE_ZOOM = 1`
+  - `ADJUST_MODE_STRETCH = 2`
+- **SizeMode**:
+  - `SIZE_MODE_MANUAL = 0`
+  - `SIZE_MODE_AUTO = 1`
+- **PieBounds**:
+  - `PIEBOUNDS_RECTANGLE = 0`
+  - `PIEBOUNDS_ELLIPSE = 1`
+
+---

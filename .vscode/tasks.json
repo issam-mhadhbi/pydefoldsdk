@@ -1,0 +1,19 @@
+// .vscode/tasks.json
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Ensure .venv",
+        "type": "shell",
+        "command": "bash",
+        "args": [
+            ".vscode/.startup.sh"
+        ],
+        "problemMatcher": [],
+        "runOptions": {
+          "runOn": "folderOpen"
+        }
+      }
+    ]
+  }
+  

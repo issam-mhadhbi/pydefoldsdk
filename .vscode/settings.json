@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "workbench.layoutControl.enabled": true,
+    "window.commandCenter": false,
+    "python.defaultInterpreterPath": "./.venv/bin/python"
+}
