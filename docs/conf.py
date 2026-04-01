@@ -13,23 +13,25 @@ version_file = os.path.abspath(os.path.join('..', 'VERSION'))
 if os.path.exists(version_file):
     release = open(version_file).read().strip()
 else:
-    release = '0.0.0'  # fallback if VERSION file missing
+    release = '0.0.0'
+
+version = release
 
 # Sphinx extensions
 extensions = [
-    'sphinx.ext.autodoc',   # generate docs from docstrings
-    'sphinx.ext.napoleon',  # support Google/NumPy docstrings
-    'myst_parser',           # enable Markdown support
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'myst_parser',
 ]
 
-# Support Markdown files
+# Support both .rst and .md files
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
 
 templates_path = ['_templates']
-exclude_patterns = []
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # HTML output
 html_theme = 'sphinx_rtd_theme'
