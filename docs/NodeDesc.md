@@ -48,6 +48,7 @@
 - **enabled**: `bool`
 - **visible**: `bool`
 - **material**: `str`
+- **spine_create_bones**: `bool`
 
 ### Enums:
 - **Type**:

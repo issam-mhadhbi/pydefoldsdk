@@ -1,6 +1,6 @@
 .PHONY: build-package update-package deploy-test deploy-release clean
 
-export DEFOLD_SDK_VERSION := 1.11.1
+export DEFOLD_SDK_VERSION := 1.12.1
 
 all: clean build-version build-package update-package deploy-test deploy-release clean
 
@@ -32,7 +32,7 @@ deploy-test: clean build-package
 		pip install --upgrade build twine && \
 		python -m build && \
 		twine check dist/* && \
-		twine upload --repository testpypi dist/* \
+		twine upload --repository testpypi dist/*  --verbose  \
 	'
 
 deploy-release: clean build-package
@@ -51,3 +51,4 @@ clean:
 	rm -rf build
 	rm -rf dist
 	rm -rf .build
+

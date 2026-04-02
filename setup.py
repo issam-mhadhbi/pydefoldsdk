@@ -11,10 +11,7 @@ def safe_git_config(cmd, default=""):
         return default
 
 def get_project_name():
-    repo_url = safe_git_config(["git", "config", "--get", "remote.origin.url"])
-    if repo_url:
-        return repo_url.split("/")[-1].replace(".git", "")
-    return os.path.basename(os.getcwd())
+    return "pydefoldsdk" 
 
 def get_author():
     return "issam.mhadhbi.dev"
@@ -23,10 +20,7 @@ def get_author_email():
     return "issam.mhadhbi.dev@gmail.com"
 
 def get_url():
-    return (
-        os.environ.get("CI_PROJECT_URL")
-        or safe_git_config(["git", "remote", "get-url", "origin"], "")
-    )
+    return "https://github.com/issam-mhadhbi/pydefoldsdk"  # fallback
 
 def get_description():
     return os.environ.get("CI_PROJECT_DESCRIPTION", "Python Package made by Mhadhbi Issam.")

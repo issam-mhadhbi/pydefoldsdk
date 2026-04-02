@@ -16,6 +16,7 @@
   - `LANGUAGE_WGSL = 8`
   - `LANGUAGE_HLSL_50 = 9`
   - `LANGUAGE_HLSL_51 = 10`
+  - `LANGUAGE_MSL_22 = 11`
 - **ShaderType**:
   - `SHADER_TYPE_VERTEX = 0`
   - `SHADER_TYPE_FRAGMENT = 1`

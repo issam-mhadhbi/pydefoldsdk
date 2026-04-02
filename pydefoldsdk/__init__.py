@@ -1,14 +1,13 @@
 from .render import *
-from .resource import *
 from .ddf import *
-from .engine import *
+from .resource import *
 from .gamesys import *
-from .gameobject import *
-from .graphics import *
 from .script import *
+from .graphics import *
+from .gameobject import *
+from .engine import *
 from .rig_ddf_pb2 import *
 from .particle_ddf_pb2 import *
-from .input_ddf_pb2 import *
 
 import importlib, pkgutil, collections, os
 from google.protobuf.descriptor import FieldDescriptor
